@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LogoLink } from "@/components/LogoLink";
 import { MobileNav } from "@/components/MobileNav";
+import { SampleInstallmentCalculator } from "@/components/SampleInstallmentCalculator";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, MessageSquare, Briefcase, GraduationCap, ArrowRight, Sparkles } from "lucide-react";
 
@@ -17,6 +18,9 @@ export default function Home() {
             </Button>
             <Button asChild variant="ghost" className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">
               <Link href="#about-us">About Us</Link>
+            </Button>
+            <Button asChild variant="ghost" className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors">
+              <Link href="#sample-computation">Sample Computation</Link>
             </Button>
             <Button asChild className="bg-[#3D454A] hover:bg-slate-800 text-white rounded-full px-7 py-5 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg">
               <a href="https://www.facebook.com/hap.installments" target="_blank" rel="noopener noreferrer">
@@ -124,6 +128,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <SampleInstallmentCalculator />
 
         {/* Features Section */}
         <section id="how-it-works" className="py-24 md:py-32 bg-[#FAFAFA] border-t border-slate-100">

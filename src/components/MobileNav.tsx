@@ -52,6 +52,13 @@ export function MobileNav() {
                         >
                             About Us
                         </Link>
+                        <Link
+                            href="#sample-computation"
+                            onClick={() => setOpen(false)}
+                            className="px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                        >
+                            Sample Computation
+                        </Link>
                         <div className="pt-4">
                             <Button
                                 asChild
