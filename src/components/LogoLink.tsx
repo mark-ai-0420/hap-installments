@@ -6,6 +6,7 @@ export function LogoLink({ className = "", logoClassName = "" }: { className?: s
     return (
         <Link
             href="/"
+            aria-label="HAP Installments Homepage"
             className={className}
             onClick={() => {
                 if (window.location.pathname === '/') {

@@ -25,9 +25,9 @@ export function MobileNav() {
                         variant="ghost"
                         size="icon"
                         aria-label="Open navigation menu"
-                        className="text-slate-600 hover:text-slate-900"
+                        className="min-h-[44px] min-w-[44px] text-slate-700 hover:text-slate-900 motion-reduce:transition-none"
                     >
-                        <Menu className="w-6 h-6" />
+                        <Menu className="w-6 h-6" aria-hidden="true" />
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right" className="w-72 bg-white px-0 pt-0">
@@ -35,34 +35,34 @@ export function MobileNav() {
                         <VisuallyHidden.Root>
                             <SheetTitle>Navigation Menu</SheetTitle>
                         </VisuallyHidden.Root>
-                        <LogoLink className="transition-opacity hover:opacity-90" />
+                        <LogoLink className="transition-opacity hover:opacity-90 motion-reduce:transition-none" />
                     </SheetHeader>
                     <nav className="flex flex-col gap-1 px-4 pt-6">
                         <Link
                             href="#how-it-works"
                             onClick={() => setOpen(false)}
-                            className="px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                            className="flex items-center px-4 py-3 min-h-[44px] rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors motion-reduce:transition-none"
                         >
                             How it works
                         </Link>
                         <Link
                             href="#about-us"
                             onClick={() => setOpen(false)}
-                            className="px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                            className="flex items-center px-4 py-3 min-h-[44px] rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors motion-reduce:transition-none"
                         >
                             About Us
                         </Link>
                         <Link
                             href="#sample-computation"
                             onClick={() => setOpen(false)}
-                            className="px-4 py-3 rounded-xl text-base font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+                            className="flex items-center px-4 py-3 min-h-[44px] rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors motion-reduce:transition-none"
                         >
                             Sample Computation
                         </Link>
                         <div className="pt-4">
                             <Button
                                 asChild
-                                className="w-full bg-[#3D454A] hover:bg-slate-800 text-white rounded-full px-7 py-5 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                                className="w-full min-h-[44px] bg-[#1F6F94] hover:bg-[#175775] text-white rounded-full px-7 py-3 shadow-sm transition-all duration-300 hover:shadow-md motion-reduce:transition-none motion-reduce:transform-none"
                             >
                                 <a
                                     href="https://www.facebook.com/hap.installments"
@@ -70,7 +70,7 @@ export function MobileNav() {
                                     rel="noopener noreferrer"
                                     onClick={() => setOpen(false)}
                                 >
-                                    Get Started
+                                    Inquire on Messenger
                                 </a>
                             </Button>
                         </div>

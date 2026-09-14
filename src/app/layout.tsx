@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hapinstallments.com'), // Replace with actual domain when available
@@ -34,10 +38,10 @@ export const metadata: Metadata = {
     siteName: "HAP Installments",
     images: [
       {
-        url: "/og-image.jpg", // Create this image in public directory later or remove if none
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "HAP Installments Preview",
+        alt: "HAP Installments - Tuition & Travel Monthly Installments",
       }
     ]
   },
@@ -45,6 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HAP Installments | Premium Monthly Payments",
     description: "Short-term monthly installment plans for tuition and travel without hidden fees.",
+    images: ["/og-image.jpg"],
     creator: "@hapinstallments",
   },
   robots: {
@@ -66,8 +71,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased bg-[#FAFAFA]`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} font-sans scroll-smooth`}>
+      <body className={`${inter.className} font-sans antialiased bg-surface-bg text-brand-charcoal`} suppressHydrationWarning>
         {children}
       </body>
     </html>

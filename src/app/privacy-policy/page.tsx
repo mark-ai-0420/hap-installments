@@ -16,9 +16,9 @@ export default function PrivacyPolicyPage() {
             <nav className="sticky top-0 z-50 w-full border-b border-slate-200/60 bg-white/70 backdrop-blur-xl">
                 <div className="container mx-auto px-6 h-20 flex items-center justify-between">
                     <LogoLink className="transition-opacity hover:opacity-90" />
-                    <Button asChild className="bg-[#3D454A] hover:bg-slate-800 text-white rounded-full px-7 py-5 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    <Button asChild className="bg-[#1F6F94] hover:bg-[#175775] text-white rounded-full px-6 py-2.5 min-h-[44px] shadow-sm transition-all duration-300 hover:shadow-md motion-reduce:transition-none motion-reduce:transform-none">
                         <a href="https://www.facebook.com/hap.installments" target="_blank" rel="noopener noreferrer">
-                            Get Started
+                            Inquire on Messenger
                         </a>
                     </Button>
                 </div>
