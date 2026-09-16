@@ -2,6 +2,11 @@ import Link from "next/link";
 import { LogoLink } from "@/components/LogoLink";
 import { MobileNav } from "@/components/MobileNav";
 import { SampleInstallmentCalculator } from "@/components/SampleInstallmentCalculator";
+import { PaymentChannelsRibbon } from "@/components/PaymentChannelsRibbon";
+import { ScenarioCards } from "@/components/ScenarioCards";
+import { EligibilityChecker } from "@/components/EligibilityChecker";
+import { FaqSection } from "@/components/FaqSection";
+import { FloatingMessengerButton } from "@/components/FloatingMessengerButton";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, MessageSquare, Briefcase, GraduationCap, ArrowRight, ShieldCheck } from "lucide-react";
 
@@ -12,15 +17,21 @@ export default function Home() {
       <nav className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-md transition-all duration-300 motion-reduce:transition-none">
         <div className="container mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
           <LogoLink className="transition-opacity hover:opacity-90 motion-reduce:transition-none" />
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             <Button asChild variant="ghost" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors motion-reduce:transition-none">
-              <Link href="#how-it-works">How it works</Link>
+              <Link href="#about-us">Coverage</Link>
             </Button>
             <Button asChild variant="ghost" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors motion-reduce:transition-none">
-              <Link href="#about-us">About Us</Link>
+              <Link href="#how-it-works">How It Works</Link>
             </Button>
             <Button asChild variant="ghost" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors motion-reduce:transition-none">
-              <Link href="#sample-computation">Sample Computation</Link>
+              <Link href="#sample-computation">Calculator</Link>
+            </Button>
+            <Button asChild variant="ghost" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors motion-reduce:transition-none">
+              <Link href="#eligibility">Eligibility</Link>
+            </Button>
+            <Button asChild variant="ghost" className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors motion-reduce:transition-none">
+              <Link href="#faq">FAQ</Link>
             </Button>
             <Button asChild className="bg-[#1F6F94] hover:bg-[#175775] text-white rounded-full px-6 py-2.5 min-h-[44px] shadow-sm transition-all duration-300 hover:shadow-md motion-reduce:transition-none motion-reduce:transform-none">
               <a href="https://www.facebook.com/hap.installments" target="_blank" rel="noopener noreferrer">
@@ -86,7 +97,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Introduction Section */}
+        {/* Payment Channels Ribbon */}
+        <PaymentChannelsRibbon />
+
+        {/* Coverage / Introduction Section */}
         <section id="about-us" className="py-20 md:py-32 bg-white relative border-b border-slate-100">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
@@ -158,13 +172,17 @@ export default function Home() {
           </div>
         </section>
 
-        <SampleInstallmentCalculator />
-
-        {/* Features Section */}
-        <section id="how-it-works" className="py-20 md:py-32 bg-[#FAFAFA] border-t border-slate-100">
+        {/* How It Works Section (Moved here right after Coverage to establish direct remittance model first) */}
+        <section id="how-it-works" className="py-20 md:py-32 bg-[#FAFAFA] border-b border-slate-200/60">
           <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
             <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-xs mb-4 text-xs font-bold uppercase tracking-wider text-[#1F6F94]">
+                <span>Simple 3-Step Process</span>
+              </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#3D454A] tracking-tight text-balance">How It Works</h2>
+              <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal text-balance">
+                We handle the bill settlement directly with your provider so you never have to deal with complex cash loan disbursements.
+              </p>
             </div>
 
             <ol className="grid md:grid-cols-3 gap-8">
@@ -203,6 +221,18 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Real-world Scenarios */}
+        <ScenarioCards />
+
+        {/* Calculator */}
+        <SampleInstallmentCalculator />
+
+        {/* Interactive Eligibility Checker */}
+        <EligibilityChecker />
+
+        {/* Frequently Asked Questions */}
+        <FaqSection />
+
         {/* CTA Section */}
         <section className="py-24 md:py-36 relative overflow-hidden bg-[#3D454A] border-t border-slate-700/40">
           <div className="container mx-auto px-4 sm:px-6 text-center max-w-3xl relative z-10">
@@ -234,21 +264,27 @@ export default function Home() {
               className="opacity-90 hover:opacity-100 transition-opacity duration-300 block motion-reduce:transition-none"
               logoClassName="scale-90 md:origin-left"
             />
-            <div className="flex gap-8 text-sm font-semibold tracking-wide">
-              <Link href="#how-it-works" className="text-slate-300 hover:text-white transition-colors motion-reduce:transition-none">How it works</Link>
-              <Link href="#about-us" className="text-slate-300 hover:text-white transition-colors motion-reduce:transition-none">About Us</Link>
-              <a href="https://www.facebook.com/hap.installments" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors motion-reduce:transition-none">Contact</a>
-            </div>
+            <nav aria-label="Footer Navigation" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:gap-x-8 text-sm font-semibold tracking-wide">
+              <Link href="#about-us" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center py-2 px-2 text-slate-300 hover:text-white transition-colors motion-reduce:transition-none">Coverage</Link>
+              <Link href="#how-it-works" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center py-2 px-2 text-slate-300 hover:text-white transition-colors motion-reduce:transition-none">How it works</Link>
+              <Link href="#sample-computation" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center py-2 px-2 text-slate-300 hover:text-white transition-colors motion-reduce:transition-none">Calculator</Link>
+              <Link href="#eligibility" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center py-2 px-2 text-slate-300 hover:text-white transition-colors motion-reduce:transition-none">Eligibility</Link>
+              <Link href="#faq" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center py-2 px-2 text-slate-300 hover:text-white transition-colors motion-reduce:transition-none">FAQ</Link>
+              <a href="https://www.facebook.com/hap.installments" target="_blank" rel="noopener noreferrer" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center py-2 px-2 text-slate-300 hover:text-white transition-colors motion-reduce:transition-none">Contact</a>
+            </nav>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400 font-medium">
             <p>© {new Date().getFullYear()} HAP Installments. All rights reserved.</p>
-            <div className="flex gap-8">
-              <Link href="/privacy-policy" className="text-slate-400 hover:text-white transition-colors motion-reduce:transition-none">Privacy Policy</Link>
-              <Link href="/terms-of-service" className="text-slate-400 hover:text-white transition-colors motion-reduce:transition-none">Terms of Service</Link>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+              <Link href="/privacy-policy" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center py-2 px-2 text-slate-400 hover:text-white transition-colors motion-reduce:transition-none">Privacy Policy</Link>
+              <Link href="/terms-of-service" className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center py-2 px-2 text-slate-400 hover:text-white transition-colors motion-reduce:transition-none">Terms of Service</Link>
             </div>
           </div>
         </div>
       </footer>
+
+      {/* Persistent Floating Messenger Action Pill */}
+      <FloatingMessengerButton />
     </div>
   );
 }

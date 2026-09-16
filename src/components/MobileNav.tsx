@@ -39,6 +39,13 @@ export function MobileNav() {
                     </SheetHeader>
                     <nav className="flex flex-col gap-1 px-4 pt-6">
                         <Link
+                            href="#about-us"
+                            onClick={() => setOpen(false)}
+                            className="flex items-center px-4 py-3 min-h-[44px] rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors motion-reduce:transition-none"
+                        >
+                            Coverage
+                        </Link>
+                        <Link
                             href="#how-it-works"
                             onClick={() => setOpen(false)}
                             className="flex items-center px-4 py-3 min-h-[44px] rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors motion-reduce:transition-none"
@@ -46,18 +53,25 @@ export function MobileNav() {
                             How it works
                         </Link>
                         <Link
-                            href="#about-us"
-                            onClick={() => setOpen(false)}
-                            className="flex items-center px-4 py-3 min-h-[44px] rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors motion-reduce:transition-none"
-                        >
-                            About Us
-                        </Link>
-                        <Link
                             href="#sample-computation"
                             onClick={() => setOpen(false)}
                             className="flex items-center px-4 py-3 min-h-[44px] rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors motion-reduce:transition-none"
                         >
-                            Sample Computation
+                            Calculator
+                        </Link>
+                        <Link
+                            href="#eligibility"
+                            onClick={() => setOpen(false)}
+                            className="flex items-center px-4 py-3 min-h-[44px] rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors motion-reduce:transition-none"
+                        >
+                            Eligibility
+                        </Link>
+                        <Link
+                            href="#faq"
+                            onClick={() => setOpen(false)}
+                            className="flex items-center px-4 py-3 min-h-[44px] rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors motion-reduce:transition-none"
+                        >
+                            FAQ
                         </Link>
                         <div className="pt-4">
                             <Button
