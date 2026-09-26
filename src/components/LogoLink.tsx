@@ -2,19 +2,29 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
 
-export function LogoLink({ className = "", logoClassName = "" }: { className?: string, logoClassName?: string }) {
+export function LogoLink({
+    className = "",
+    logoClassName = "",
+    variant = "default",
+    ariaLabel
+}: {
+    className?: string;
+    logoClassName?: string;
+    variant?: "default" | "inverted";
+    ariaLabel?: string;
+}) {
     return (
         <Link
             href="/"
-            aria-label="HAP Installments Homepage"
+            {...(ariaLabel ? { "aria-label": ariaLabel } : {})}
             className={className}
             onClick={() => {
-                if (window.location.pathname === '/') {
+                if (typeof window !== 'undefined' && window.location.pathname === '/') {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             }}
         >
-            <Logo className={logoClassName} />
+            <Logo className={logoClassName} variant={variant} />
         </Link>
     );
 }

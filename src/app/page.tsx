@@ -211,7 +211,7 @@ export default function Home() {
                     <span className="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 text-[#1F6F94] border border-blue-100">
                       Step {feature.step}
                     </span>
-                    <span className="text-xs font-bold text-slate-400">{feature.phase}</span>
+                    <span className="text-xs font-bold text-slate-600">{feature.phase}</span>
                   </div>
                   <h3 className="text-xl font-bold text-[#3D454A] mb-3 tracking-tight">{feature.title}</h3>
                   <p className="text-slate-600 leading-relaxed font-normal text-sm sm:text-base">{feature.desc}</p>
@@ -251,7 +251,7 @@ export default function Home() {
                 Inquire on Facebook Messenger
               </a>
             </Button>
-            <p className="mt-6 text-xs text-slate-400 font-medium">No hidden application fees • We remit directly to schools and registered travel agencies</p>
+            <p className="mt-6 text-xs text-slate-300 font-medium">No hidden application fees • We remit directly to schools and registered travel agencies</p>
           </div>
         </section>
       </main>
@@ -261,6 +261,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12 pb-12 border-b border-white/10">
             <LogoLink
+              variant="inverted"
               className="opacity-90 hover:opacity-100 transition-opacity duration-300 block motion-reduce:transition-none"
               logoClassName="scale-90 md:origin-left"
             />

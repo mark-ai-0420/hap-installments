@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Disable framework information disclosure in HTTP headers
+  poweredByHeader: false,
+
   // Enforce security headers for the application
   async headers() {
     return [
@@ -29,6 +32,10 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin'
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
           },
           {
             // Restrict external resources
